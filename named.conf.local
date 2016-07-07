@@ -1,0 +1,12 @@
+key "keyname." {
+		algorithm hmac-md5;
+		secret "<key>";
+};
+
+zone "<root>" {
+		type master;
+		file "zonefile";
+		allow-update { key "keyname."; };
+		allow-query {any; };
+		allow-transfer { none; };
+};
